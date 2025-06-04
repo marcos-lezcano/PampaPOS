@@ -12,7 +12,7 @@ lastWeek.setDate(lastWeek.getDate() - 7);
 const sampleSales: Sale[] = [
   {
     id: '1',
-    date: today,
+    created_at: today.toISOString(),
     items: [
       {
         product: {
@@ -39,7 +39,7 @@ const sampleSales: Sale[] = [
   },
   {
     id: '2',
-    date: yesterday,
+    created_at: yesterday.toISOString(),
     items: [
       {
         product: {
@@ -66,7 +66,7 @@ const sampleSales: Sale[] = [
   },
   {
     id: '3',
-    date: lastWeek,
+    created_at: lastWeek.toISOString(),
     items: [
       {
         product: {
@@ -108,7 +108,7 @@ export function useSales() {
   };
 
   // Function to add a new sale
-  const addSale = async (sale: Omit<Sale, 'id' | 'date'>) => {
+  const addSale = async (sale: Omit<Sale, 'id' | 'created_at'>) => {
     setLoading(true);
     try {
       // When Supabase is connected, replace this with actual insert
@@ -118,7 +118,7 @@ export function useSales() {
       const newSale = {
         ...sale,
         id: Math.random().toString(36).substring(2, 9),
-        date: new Date()
+        created_at: new Date().toISOString()
       };
       
       setSales([newSale, ...sales]);
@@ -135,7 +135,7 @@ export function useSales() {
   const getTodaySales = () => {
     const today = new Date();
     return sales.filter(sale => {
-      const saleDate = new Date(sale.date);
+      const saleDate = new Date(sale.created_at);
       return saleDate.toDateString() === today.toDateString();
     });
   };
@@ -146,7 +146,7 @@ export function useSales() {
     lastWeek.setDate(lastWeek.getDate() - 7);
     
     return sales.filter(sale => {
-      const saleDate = new Date(sale.date);
+      const saleDate = new Date(sale.created_at);
       return saleDate >= lastWeek && saleDate <= today;
     });
   };
@@ -156,7 +156,7 @@ export function useSales() {
     const firstDayOfMonth = new Date(today.getFullYear(), today.getMonth(), 1);
     
     return sales.filter(sale => {
-      const saleDate = new Date(sale.date);
+      const saleDate = new Date(sale.created_at);
       return saleDate >= firstDayOfMonth && saleDate <= today;
     });
   };
