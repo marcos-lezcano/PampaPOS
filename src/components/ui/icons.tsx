@@ -1,0 +1,58 @@
+// Importamos todos los iconos que necesitamos de una sola vez
+import {
+  ShoppingCart,
+  CreditCard,
+  Package,
+  TrendingUp,
+  Search,
+  Plus,
+  Loader2,
+  Trash2,
+  Minus,
+  PlusCircle,
+  Edit,
+  Trash,
+  Receipt,
+  Calendar,
+  ShoppingBag,
+  LayoutDashboard,
+  BarChart3,
+  Settings,
+  ChevronLeft,
+  LogOut,
+  AlertTriangle,
+  RefreshCw,
+  ChevronRight,
+  Sun,
+  Moon
+} from 'lucide-react';
+
+// Exportamos un objeto con todos los iconos
+export const Icons = {
+  ShoppingCart,
+  CreditCard,
+  Package,
+  TrendingUp,
+  Search,
+  Plus,
+  Loader2,
+  Trash2,
+  Minus,
+  PlusCircle,
+  Edit,
+  Trash,
+  Receipt,
+  Calendar,
+  ShoppingBag,
+  LayoutDashboard,
+  BarChart3,
+  Settings,
+  ChevronLeft,
+  ChevronRight,
+  Sun,
+  Moon,
+  LogOut,
+  AlertTriangle,
+  RefreshCw
+} as const;
+
