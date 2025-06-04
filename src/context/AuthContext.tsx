@@ -151,7 +151,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         'session?.user?.email': session?.user?.email
       });
 
-      // Solo procesar eventos SIGNED_IN y SIGNED_OUT
+      // Solo procesar eventos SIGNED_IN, SIGNED_OUT y TOKEN_REFRESHED
       if (event === 'SIGNED_IN' && session?.user) {
         console.log('🔓 [onAuthStateChange] Usuario autenticado');
         // No hacer nada más aquí, signIn() ya maneja todo
