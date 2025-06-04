@@ -137,7 +137,7 @@ export function Dashboard() {
                       <div>
                         <p className="font-medium">Venta #{sale.id.slice(-5)}</p>
                         <p className="text-sm text-muted-foreground">
-                          {new Date(sale.date).toLocaleTimeString([], { 
+                          {new Date(sale.created_at).toLocaleTimeString([], {
                             hour: '2-digit', 
                             minute: '2-digit' 
                           })}
