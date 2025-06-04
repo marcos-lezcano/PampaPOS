@@ -19,7 +19,7 @@ const sampleSales: Sale[] = [
           id: '1',
           name: 'Café Americano',
           price: 2.50,
-          imageUrl: 'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg',
+          image_url: 'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg',
           stock: 100
         },
         quantity: 2
@@ -29,7 +29,7 @@ const sampleSales: Sale[] = [
           id: '2',
           name: 'Café Latte',
           price: 3.50,
-          imageUrl: 'https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg',
+          image_url: 'https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg',
           stock: 100
         },
         quantity: 1
@@ -46,7 +46,7 @@ const sampleSales: Sale[] = [
           id: '3',
           name: 'Croissant',
           price: 2.00,
-          imageUrl: 'https://images.pexels.com/photos/3892469/pexels-photo-3892469.jpeg',
+          image_url: 'https://images.pexels.com/photos/3892469/pexels-photo-3892469.jpeg',
           stock: 20
         },
         quantity: 3
@@ -56,7 +56,7 @@ const sampleSales: Sale[] = [
           id: '4',
           name: 'Sandwich de Jamón y Queso',
           price: 4.50,
-          imageUrl: 'https://images.pexels.com/photos/1647163/pexels-photo-1647163.jpeg',
+          image_url: 'https://images.pexels.com/photos/1647163/pexels-photo-1647163.jpeg',
           stock: 15
         },
         quantity: 1
@@ -73,7 +73,7 @@ const sampleSales: Sale[] = [
           id: '5',
           name: 'Jugo de Naranja',
           price: 3.00,
-          imageUrl: 'https://images.pexels.com/photos/1536868/pexels-photo-1536868.jpeg',
+          image_url: 'https://images.pexels.com/photos/1536868/pexels-photo-1536868.jpeg',
           stock: 30
         },
         quantity: 2
