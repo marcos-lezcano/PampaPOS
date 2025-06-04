@@ -151,11 +151,29 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         'session?.user?.email': session?.user?.email
       });
 
-      // Solo procesar eventos SIGNED_IN, SIGNED_OUT y TOKEN_REFRESHED
-      if (event === 'SIGNED_IN' && session?.user) {
-        console.log('🔓 [onAuthStateChange] Usuario autenticado');
-        // No hacer nada más aquí, signIn() ya maneja todo
-      } else if (event === 'SIGNED_OUT' || event === 'TOKEN_REFRESHED') {
+      if ((event === 'INITIAL_SESSION' || event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') && session?.user) {
+        try {
+          // Actualizar sesión y datos del usuario
+          setSession(session);
+          const userData = await fetchUserData(session.user.id);
+          if (userData?.business_id) {
+            const extendedUser = {
+              ...session.user,
+              user_metadata: {
+                ...session.user.user_metadata,
+                business_id: userData.business_id,
+                role: userData.role
+              }
+            };
+            setUser(extendedUser as User);
+          } else {
+            setUser(null);
+          }
+        } finally {
+          setLoading(false);
+          setUserDataLoading(false);
+        }
+      } else if (event === 'SIGNED_OUT') {
         console.log('🔒 [onAuthStateChange] Evento:', event);
         setUser(null);
         setSession(null);
