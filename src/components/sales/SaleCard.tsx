@@ -1,4 +1,4 @@
-import { Sale } from '@/types';
+import { Sale, SaleItem } from '@/types';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 import {
